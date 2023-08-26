@@ -1,0 +1,34 @@
+//We will using bit set/reset
+// SET means on
+// reset means off
+
+#include "stm32f4xx.h"
+
+#define GPIOAEN 		(1U<<0)
+#define UART2AEN 		(1U<<17)
+
+
+int main(void)
+{
+
+	while(1){
+
+	}
+
+}
+
+void uart2_tx_init(void){
+
+
+	/*Enable Clock Access to GPIOA*/
+	/*SET PA2 mode to alternate function mode*/
+	/*SET PA2 Alternate function type to UART_TX (AF07)*/
+
+
+	/*Configure UART Module*/
+	/*Enable Clock access to UART2 */
+	/*Configure Baudrate*/
+	/*Configure the transfer direction*/
+	/*Enable UART Module*/
+
+}

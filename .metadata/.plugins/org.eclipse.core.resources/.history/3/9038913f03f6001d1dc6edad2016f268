@@ -1,0 +1,24 @@
+//We will using bit set/reset
+// SET means on
+// reset means off
+
+#include "stm32f4xx.h"
+
+#define GPIOAEN 		(1U<<0)
+#define UART2AEN 		(1U<<17)
+
+
+int main(void)
+{
+
+	while(1){
+
+	}
+
+}
+
+void uart2_tx_init(void){
+
+	/*Configure UART GPIO PIN*/
+
+}

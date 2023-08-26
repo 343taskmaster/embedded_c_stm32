@@ -1,0 +1,49 @@
+//Locating the PA5
+// PORT A
+// PIN B
+// GPIOA 5
+// Boundry Address or Base Address
+
+//Locate the GPIOA Boundry Address and RCC Boundry  Address
+#define PERIPH_BASE 	   (0x4000 0000UL) // BASE Address of AHB1 Bus
+#define AHB1_PERIPH_OFFSET (0x0002 0000UL) //Access AHB
+
+#define AHB1PERIPH_BASE    (PERIPH_BASE + AHB1_PERIPH_OFFSET)  //GPIOA Starting address 0x4002 0000UL
+#define GPIOA_OFFSET 	   (0x0000UL)
+
+#define GPIOA_BASE 		   (AHB1PERIPH_BASE + GPIOA_OFFSET ) //GPIOA Starting address 0x4002 0000UL same us above
+
+// RCC BASE Address
+#define RCC_OFFSET			(0x3800UL) // RCC 0x0000 3800
+#define RCC_BASE			(AHB1PERIPH_BASE + RCC_OFFSET) //  0x4002 0000 + 0x0000 3800 =  0x4002 3800 RCC BASE Address
+
+//=====================================================================================================================
+
+
+// AHB1 enabled access to RCC
+#define AHB1EN_R_OFFSET		(0x30UL) //OFFSET ADDRESS OF AHB1 ENABLE , REFERENCE MANUAL IS 117 0x0000 0030
+#define RCC_AHB1EN_R 		 (*(volatile unsigned int )*(RCC_BASE + AHB1EN_R_OFFSET ))   // 0x4002 3800 +   0x4002 3800 = 0x4002 3830
+
+//Mode Register or Directional Register = configure if PIN is input/output reference manual page 157
+#define MODE_R_OFFSET 		(0x00UL) //offset of Moder
+#define GPIOA_MODE_R		(*(volatile unsigned int )*(MODE_R_OFFSET + GPIOA_BASE )) // 0x0000 0000  + 0x4002 0000 =  0x4002 0000
+
+
+
+/*GPIOA_MODER Moder5 */
+/*bit 10 of moder5 must be set to 1 */
+/*(1U<<10) //set bit ten to 1 */
+/*bit 11 of moder5 must be set to 0 */
+/* &=~(1U<<11) //set to eleven to 0 */
+
+//Enable Clock on GPIOA REF 117 REFERENCE MANUAL
+#define  GPIOAEN    		(1U<<0) // Shift 1 at position Zero  0000 0000 0000 0000 0000 0000 0001 this is a 32bit register
+
+//We need to turn on and off the led , We need to moder output registry ref 157 or 158
+#define OD_R_OFFSET 		(0x14UL) //
+#define GPIOA_OD_R  		 (*(volatile unsigned int )*(GPIOA_BASE + OD_R_OFFSET  )) // 0x4002 0000 + 0x0000 0014 = 0x4002 00014
+
+//Moder OUTPUT register , ref 157 or 158 reference manual
+#define PIN5  				(1U<<5) //0x 0000 0000 0000 0000 0000 0001 0000
+#define LED_PIN				PIN5
+

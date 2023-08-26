@@ -1,0 +1,164 @@
+14:13:31 **** Build of configuration Debug for project  0_led_toggle_addr ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f411retx.d" -MT"Startup/startup_stm32f411retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f411retx.o" "../Startup/startup_stm32f411retx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+make: *** No rule to make target '0_led_toggle_addr\STM32F411RETX_FLASH.ld', needed by '0_led_toggle_addr.elf'.  Stop.
+make: *** Waiting for unfinished jobs....
+../Src/main.c: In function 'main':
+../Src/main.c:11:33: error: expected ')' before numeric constant
+   11 | #define PERIPH_BASE     (0x4000 0000UL) // BASE Address of AHB1 Bus
+      |                         ~       ^~~~~~
+../Src/main.c:14:29: note: in expansion of macro 'PERIPH_BASE'
+   14 | #define AHB1PERIPH_BASE    (PERIPH_BASE + AHB1_PERIPH_OFFSET)  //GPIOA Starting address 0x4002 0000UL
+      |                             ^~~~~~~~~~~
+../Src/main.c:21:21: note: in expansion of macro 'AHB1PERIPH_BASE'
+   21 | #define RCC_BASE   (AHB1PERIPH_BASE + RCC_OFFSET) //  0x4002 0000 + 0x0000 3800 =  0x4002 3800 RCC BASE Address
+      |                     ^~~~~~~~~~~~~~~
+../Src/main.c:31:53: note: in expansion of macro 'RCC_BASE'
+   31 | #define RCC_AHB1EN_R    (*(volatile unsigned int )*(RCC_BASE + AHB1EN_R_OFFSET ))   // 0x4002 3800 +   0x4002 3800 = 0x4002 3830
+      |                                                     ^~~~~~~~
+../Src/main.c:76:2: note: in expansion of macro 'RCC_AHB1EN_R'
+   76 |  RCC_AHB1EN_R |=  GPIOAEN;
+      |  ^~~~~~~~~~~~
+../Src/main.c:12:36: error: expected ')' before numeric constant
+   12 | #define AHB1_PERIPH_OFFSET (0x0002 0000UL) //Access AHB
+      |                            ~       ^~~~~~
+../Src/main.c:14:43: note: in expansion of macro 'AHB1_PERIPH_OFFSET'
+   14 | #define AHB1PERIPH_BASE    (PERIPH_BASE + AHB1_PERIPH_OFFSET)  //GPIOA Starting address 0x4002 0000UL
+      |                                           ^~~~~~~~~~~~~~~~~~
+../Src/main.c:21:21: note: in expansion of macro 'AHB1PERIPH_BASE'
+   21 | #define RCC_BASE   (AHB1PERIPH_BASE + RCC_OFFSET) //  0x4002 0000 + 0x0000 3800 =  0x4002 3800 RCC BASE Address
+      |                     ^~~~~~~~~~~~~~~
+../Src/main.c:31:53: note: in expansion of macro 'RCC_BASE'
+   31 | #define RCC_AHB1EN_R    (*(volatile unsigned int )*(RCC_BASE + AHB1EN_R_OFFSET ))   // 0x4002 3800 +   0x4002 3800 = 0x4002 3830
+      |                                                     ^~~~~~~~
+../Src/main.c:76:2: note: in expansion of macro 'RCC_AHB1EN_R'
+   76 |  RCC_AHB1EN_R |=  GPIOAEN;
+      |  ^~~~~~~~~~~~
+../Src/main.c:31:51: error: invalid type argument of unary '*' (have 'long unsigned int')
+   31 | #define RCC_AHB1EN_R    (*(volatile unsigned int )*(RCC_BASE + AHB1EN_R_OFFSET ))   // 0x4002 3800 +   0x4002 3800 = 0x4002 3830
+      |                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:76:2: note: in expansion of macro 'RCC_AHB1EN_R'
+   76 |  RCC_AHB1EN_R |=  GPIOAEN;
+      |  ^~~~~~~~~~~~
+../Src/main.c:11:33: error: expected ')' before numeric constant
+   11 | #define PERIPH_BASE     (0x4000 0000UL) // BASE Address of AHB1 Bus
+      |                         ~       ^~~~~~
+../Src/main.c:14:29: note: in expansion of macro 'PERIPH_BASE'
+   14 | #define AHB1PERIPH_BASE    (PERIPH_BASE + AHB1_PERIPH_OFFSET)  //GPIOA Starting address 0x4002 0000UL
+      |                             ^~~~~~~~~~~
+../Src/main.c:17:26: note: in expansion of macro 'AHB1PERIPH_BASE'
+   17 | #define GPIOA_BASE      (AHB1PERIPH_BASE + GPIOA_OFFSET ) //GPIOA Starting address 0x4002 0000UL same us above
+      |                          ^~~~~~~~~~~~~~~
+../Src/main.c:44:53: note: in expansion of macro 'GPIOA_BASE'
+   44 | #define GPIOA_MODE_R    (*(volatile unsigned int )*(GPIOA_BASE + MODE_R_OFFSET))
+      |                                                     ^~~~~~~~~~
+../Src/main.c:79:2: note: in expansion of macro 'GPIOA_MODE_R'
+   79 |  GPIOA_MODE_R |= (1U<<10);
+      |  ^~~~~~~~~~~~
+../Src/main.c:12:36: error: expected ')' before numeric constant
+   12 | #define AHB1_PERIPH_OFFSET (0x0002 0000UL) //Access AHB
+      |                            ~       ^~~~~~
+../Src/main.c:14:43: note: in expansion of macro 'AHB1_PERIPH_OFFSET'
+   14 | #define AHB1PERIPH_BASE    (PERIPH_BASE + AHB1_PERIPH_OFFSET)  //GPIOA Starting address 0x4002 0000UL
+      |                                           ^~~~~~~~~~~~~~~~~~
+../Src/main.c:17:26: note: in expansion of macro 'AHB1PERIPH_BASE'
+   17 | #define GPIOA_BASE      (AHB1PERIPH_BASE + GPIOA_OFFSET ) //GPIOA Starting address 0x4002 0000UL same us above
+      |                          ^~~~~~~~~~~~~~~
+../Src/main.c:44:53: note: in expansion of macro 'GPIOA_BASE'
+   44 | #define GPIOA_MODE_R    (*(volatile unsigned int )*(GPIOA_BASE + MODE_R_OFFSET))
+      |                                                     ^~~~~~~~~~
+../Src/main.c:79:2: note: in expansion of macro 'GPIOA_MODE_R'
+   79 |  GPIOA_MODE_R |= (1U<<10);
+      |  ^~~~~~~~~~~~
+../Src/main.c:44:51: error: invalid type argument of unary '*' (have 'long unsigned int')
+   44 | #define GPIOA_MODE_R    (*(volatile unsigned int )*(GPIOA_BASE + MODE_R_OFFSET))
+      |                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:79:2: note: in expansion of macro 'GPIOA_MODE_R'
+   79 |  GPIOA_MODE_R |= (1U<<10);
+      |  ^~~~~~~~~~~~
+../Src/main.c:11:33: error: expected ')' before numeric constant
+   11 | #define PERIPH_BASE     (0x4000 0000UL) // BASE Address of AHB1 Bus
+      |                         ~       ^~~~~~
+../Src/main.c:14:29: note: in expansion of macro 'PERIPH_BASE'
+   14 | #define AHB1PERIPH_BASE    (PERIPH_BASE + AHB1_PERIPH_OFFSET)  //GPIOA Starting address 0x4002 0000UL
+      |                             ^~~~~~~~~~~
+../Src/main.c:17:26: note: in expansion of macro 'AHB1PERIPH_BASE'
+   17 | #define GPIOA_BASE      (AHB1PERIPH_BASE + GPIOA_OFFSET ) //GPIOA Starting address 0x4002 0000UL same us above
+      |                          ^~~~~~~~~~~~~~~
+../Src/main.c:44:53: note: in expansion of macro 'GPIOA_BASE'
+   44 | #define GPIOA_MODE_R    (*(volatile unsigned int )*(GPIOA_BASE + MODE_R_OFFSET))
+      |                                                     ^~~~~~~~~~
+../Src/main.c:80:2: note: in expansion of macro 'GPIOA_MODE_R'
+   80 |  GPIOA_MODE_R &=~(1U<<11);
+      |  ^~~~~~~~~~~~
+../Src/main.c:12:36: error: expected ')' before numeric constant
+   12 | #define AHB1_PERIPH_OFFSET (0x0002 0000UL) //Access AHB
+      |                            ~       ^~~~~~
+../Src/main.c:14:43: note: in expansion of macro 'AHB1_PERIPH_OFFSET'
+   14 | #define AHB1PERIPH_BASE    (PERIPH_BASE + AHB1_PERIPH_OFFSET)  //GPIOA Starting address 0x4002 0000UL
+      |                                           ^~~~~~~~~~~~~~~~~~
+../Src/main.c:17:26: note: in expansion of macro 'AHB1PERIPH_BASE'
+   17 | #define GPIOA_BASE      (AHB1PERIPH_BASE + GPIOA_OFFSET ) //GPIOA Starting address 0x4002 0000UL same us above
+      |                          ^~~~~~~~~~~~~~~
+../Src/main.c:44:53: note: in expansion of macro 'GPIOA_BASE'
+   44 | #define GPIOA_MODE_R    (*(volatile unsigned int )*(GPIOA_BASE + MODE_R_OFFSET))
+      |                                                     ^~~~~~~~~~
+../Src/main.c:80:2: note: in expansion of macro 'GPIOA_MODE_R'
+   80 |  GPIOA_MODE_R &=~(1U<<11);
+      |  ^~~~~~~~~~~~
+../Src/main.c:44:51: error: invalid type argument of unary '*' (have 'long unsigned int')
+   44 | #define GPIOA_MODE_R    (*(volatile unsigned int )*(GPIOA_BASE + MODE_R_OFFSET))
+      |                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:80:2: note: in expansion of macro 'GPIOA_MODE_R'
+   80 |  GPIOA_MODE_R &=~(1U<<11);
+      |  ^~~~~~~~~~~~
+../Src/main.c:11:33: error: expected ')' before numeric constant
+   11 | #define PERIPH_BASE     (0x4000 0000UL) // BASE Address of AHB1 Bus
+      |                         ~       ^~~~~~
+../Src/main.c:14:29: note: in expansion of macro 'PERIPH_BASE'
+   14 | #define AHB1PERIPH_BASE    (PERIPH_BASE + AHB1_PERIPH_OFFSET)  //GPIOA Starting address 0x4002 0000UL
+      |                             ^~~~~~~~~~~
+../Src/main.c:17:26: note: in expansion of macro 'AHB1PERIPH_BASE'
+   17 | #define GPIOA_BASE      (AHB1PERIPH_BASE + GPIOA_OFFSET ) //GPIOA Starting address 0x4002 0000UL same us above
+      |                          ^~~~~~~~~~~~~~~
+../Src/main.c:51:49: note: in expansion of macro 'GPIOA_BASE'
+   51 | #define GPIOA_OD_R  (*(volatile unsigned int )*(GPIOA_BASE + OD_R_OFFSET))  // 0x4002 0000 + 0x0000 0014 = 0x4002 0014
+      |                                                 ^~~~~~~~~~
+../Src/main.c:85:3: note: in expansion of macro 'GPIOA_OD_R'
+   85 |   GPIOA_OD_R |= LED_PIN;
+      |   ^~~~~~~~~~
+../Src/main.c:12:36: error: expected ')' before numeric constant
+   12 | #define AHB1_PERIPH_OFFSET (0x0002 0000UL) //Access AHB
+      |                            ~       ^~~~~~
+../Src/main.c:14:43: note: in expansion of macro 'AHB1_PERIPH_OFFSET'
+   14 | #define AHB1PERIPH_BASE    (PERIPH_BASE + AHB1_PERIPH_OFFSET)  //GPIOA Starting address 0x4002 0000UL
+      |                                           ^~~~~~~~~~~~~~~~~~
+../Src/main.c:17:26: note: in expansion of macro 'AHB1PERIPH_BASE'
+   17 | #define GPIOA_BASE      (AHB1PERIPH_BASE + GPIOA_OFFSET ) //GPIOA Starting address 0x4002 0000UL same us above
+      |                          ^~~~~~~~~~~~~~~
+../Src/main.c:51:49: note: in expansion of macro 'GPIOA_BASE'
+   51 | #define GPIOA_OD_R  (*(volatile unsigned int )*(GPIOA_BASE + OD_R_OFFSET))  // 0x4002 0000 + 0x0000 0014 = 0x4002 0014
+      |                                                 ^~~~~~~~~~
+../Src/main.c:85:3: note: in expansion of macro 'GPIOA_OD_R'
+   85 |   GPIOA_OD_R |= LED_PIN;
+      |   ^~~~~~~~~~
+../Src/main.c:51:47: error: invalid type argument of unary '*' (have 'long unsigned int')
+   51 | #define GPIOA_OD_R  (*(volatile unsigned int )*(GPIOA_BASE + OD_R_OFFSET))  // 0x4002 0000 + 0x0000 0014 = 0x4002 0014
+      |                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:85:3: note: in expansion of macro 'GPIOA_OD_R'
+   85 |   GPIOA_OD_R |= LED_PIN;
+      |   ^~~~~~~~~~
+../Src/main.c:54:17: error: expected expression before '=' token
+   54 | #define LED_PIN = PIN5
+      |                 ^
+../Src/main.c:85:17: note: in expansion of macro 'LED_PIN'
+   85 |   GPIOA_OD_R |= LED_PIN;
+      |                 ^~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+14:13:32 Build Failed. 16 errors, 0 warnings. (took 1s.120ms)
+

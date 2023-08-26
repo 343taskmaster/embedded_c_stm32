@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;10_adc2_continous_conversion&apos; to &apos;010_adc2_continous_conversion&apos;" description="Rename resource &apos;10_adc2_continous_conversion&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/10_adc2_continous_conversion" name="010_adc2_continous_conversion" stamp="1690729095924" updateReferences="true"/>
+</session>

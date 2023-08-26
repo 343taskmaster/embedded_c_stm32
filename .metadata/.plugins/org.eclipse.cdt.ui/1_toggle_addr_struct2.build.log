@@ -1,0 +1,20 @@
+16:44:44 **** Incremental Build of configuration Debug for project 1_toggle_addr_struct2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "1_toggle_addr_struct2.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32 workspace\1_toggle_addr_struct2\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1_toggle_addr_struct2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 1_toggle_addr_struct2.elf
+ 
+arm-none-eabi-size   1_toggle_addr_struct2.elf 
+arm-none-eabi-objdump -h -S  1_toggle_addr_struct2.elf  > "1_toggle_addr_struct2.list"
+arm-none-eabi-objcopy  -O binary  1_toggle_addr_struct2.elf  "1_toggle_addr_struct2.bin"
+   text	   data	    bss	    dec	    hex	filename
+    744	      8	   1568	   2320	    910	1_toggle_addr_struct2.elf
+Finished building: default.size.stdout
+ 
+Finished building: 1_toggle_addr_struct2.bin
+Finished building: 1_toggle_addr_struct2.list
+ 
+ 
+
+16:44:44 Build Finished. 0 errors, 0 warnings. (took 426ms)
+
