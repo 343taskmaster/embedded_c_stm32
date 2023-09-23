@@ -1,10 +1,9 @@
-16:40:21 **** Incremental Build of configuration Debug for project 3_gpio_brr ****
-make -j8 all 
-arm-none-eabi-size   3_gpio_brr.elf 
-   text	   data	    bss	    dec	    hex	filename
-    816	      8	   1568	   2392	    958	3_gpio_brr.elf
-Finished building: default.size.stdout
+01:42:44 **** Clean-only build of configuration Debug for project 3_gpio_brr ****
+make -j7 clean 
+rm -rf ./Startup/startup_stm32f411retx.d ./Startup/startup_stm32f411retx.o
+rm -rf ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf 3_gpio_brr.elf 3_gpio_brr.list 3_gpio_brr.map default.size.stdout
  
 
-16:40:21 Build Finished. 0 errors, 0 warnings. (took 182ms)
+01:42:45 Build Finished. 0 errors, 0 warnings. (took 305ms)
 

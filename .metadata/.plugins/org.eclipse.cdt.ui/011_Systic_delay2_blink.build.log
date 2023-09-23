@@ -1,0 +1,17 @@
+02:43:28 **** Incremental Build of configuration Debug for project 011_Systic_delay2_blink ****
+make -j7 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -DSTM32F411xE -c -I../Inc -I/Users/arnoldbenedictganapin/Documents/embedded_c_stm32/chip_header/CMSIS/Device/ST/STM32F4xx/Include -I/Users/arnoldbenedictganapin/Documents/embedded_c_stm32/chip_header/CMSIS/include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "011_Systic_delay2_blink.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/arnoldbenedictganapin/Documents/embedded_c_stm32/011_Systic_delay2_blink/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="011_Systic_delay2_blink.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 011_Systic_delay2_blink.elf
+ 
+arm-none-eabi-size   011_Systic_delay2_blink.elf 
+arm-none-eabi-objdump -h -S  011_Systic_delay2_blink.elf  > "011_Systic_delay2_blink.list"
+   text	   data	    bss	    dec	    hex	filename
+   5680	    108	   1588	   7376	   1cd0	011_Systic_delay2_blink.elf
+Finished building: default.size.stdout
+ 
+Finished building: 011_Systic_delay2_blink.list
+ 
+
+02:43:29 Build Finished. 0 errors, 0 warnings. (took 1s.24ms)
+

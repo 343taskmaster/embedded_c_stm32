@@ -1,10 +1,9 @@
-22:20:45 **** Incremental Build of configuration Debug for project 6_uart_printf ****
-make -j8 all 
-arm-none-eabi-size   6_uart_printf.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5432	    108	   1596	   7136	   1be0	6_uart_printf.elf
-Finished building: default.size.stdout
+01:42:46 **** Clean-only build of configuration Debug for project 6_uart_printf ****
+make -j7 clean 
+rm -rf ./Startup/startup_stm32f411retx.d ./Startup/startup_stm32f411retx.o
+rm -rf ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf 6_uart_printf.elf 6_uart_printf.list 6_uart_printf.map default.size.stdout
  
 
-22:20:45 Build Finished. 0 errors, 0 warnings. (took 190ms)
+01:42:46 Build Finished. 0 errors, 0 warnings. (took 266ms)
 

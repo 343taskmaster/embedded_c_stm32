@@ -1,24 +1,9 @@
-00:38:09 **** Incremental Build of configuration Debug for project 7_uart_module ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -DSTM32F411xE -c -I../Inc -I"D:/STM32 workspace/chip_header/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/STM32 workspace/chip_header/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411RETx -DSTM32F411xE -c -I../Inc -I"D:/STM32 workspace/chip_header/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/STM32 workspace/chip_header/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/uart.o"
-../Src/uart.c:8:18: warning: extra tokens at end of #include directive
-    8 | #include "uart.h";
-      |                  ^
-arm-none-eabi-gcc -o "7_uart_module.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32 workspace\7_uart_module\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="7_uart_module.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 7_uart_module.elf
- 
-arm-none-eabi-size   7_uart_module.elf 
-arm-none-eabi-objdump -h -S  7_uart_module.elf  > "7_uart_module.list"
-arm-none-eabi-objcopy  -O binary  7_uart_module.elf  "7_uart_module.bin"
-   text	   data	    bss	    dec	    hex	filename
-   5436	    108	   1596	   7140	   1be4	7_uart_module.elf
-Finished building: default.size.stdout
- 
-Finished building: 7_uart_module.bin
-Finished building: 7_uart_module.list
- 
+01:42:46 **** Clean-only build of configuration Debug for project 7_uart_module ****
+make -j7 clean 
+rm -rf ./Startup/startup_stm32f411retx.d ./Startup/startup_stm32f411retx.o
+rm -rf ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/uart.cyclo ./Src/uart.d ./Src/uart.o ./Src/uart.su
+rm -rf 7_uart_module.elf 7_uart_module.list 7_uart_module.map default.size.stdout
  
 
-00:38:12 Build Finished. 0 errors, 1 warnings. (took 2s.722ms)
+01:42:47 Build Finished. 0 errors, 0 warnings. (took 286ms)
 

@@ -1,24 +1,9 @@
-22:46:14 **** Incremental Build of configuration Debug for project 010_adc2_continous_conversion ****
-make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 '-DD:/STM32 workspace/chip_header/CMSIS/Device/ST/STM32F4xx/Include' '-DD:/STM32 workspace/chip_header/CMSIS/Include' -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f411retx.d" -MT"Startup/startup_stm32f411retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f411retx.o" "../Startup/startup_stm32f411retx.s"
-<command-line>: warning: missing whitespace after the macro name
-<command-line>: warning: missing whitespace after the macro name
-<command-line>: warning: "D" redefined
-<command-line>: note: this is the location of the previous definition
-arm-none-eabi-gcc -o "010_adc2_continous_conversion.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32 workspace\010_adc2_continous_conversion\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="010_adc2_continous_conversion.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 010_adc2_continous_conversion.elf
- 
-arm-none-eabi-size   010_adc2_continous_conversion.elf 
-arm-none-eabi-objdump -h -S  010_adc2_continous_conversion.elf  > "010_adc2_continous_conversion.list"
-arm-none-eabi-objcopy  -O binary  010_adc2_continous_conversion.elf  "010_adc2_continous_conversion.bin"
-   text	   data	    bss	    dec	    hex	filename
-   5620	    108	   1596	   7324	   1c9c	010_adc2_continous_conversion.elf
-Finished building: default.size.stdout
- 
-Finished building: 010_adc2_continous_conversion.bin
- 
-Finished building: 010_adc2_continous_conversion.list
+01:42:42 **** Clean-only build of configuration Release for project 010_adc2_continous_conversion ****
+make -j7 clean 
+rm -rf ./Startup/startup_stm32f411retx.d ./Startup/startup_stm32f411retx.o
+rm -rf ./Src/adc.cyclo ./Src/adc.d ./Src/adc.o ./Src/adc.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/uart.cyclo ./Src/uart.d ./Src/uart.o ./Src/uart.su
+rm -rf 010_adc2_continous_conversion.elf 010_adc2_continous_conversion.list 010_adc2_continous_conversion.map default.size.stdout
  
 
-22:46:15 Build Finished. 0 errors, 0 warnings. (took 1s.294ms)
+01:42:43 Build Finished. 0 errors, 0 warnings. (took 366ms)
 

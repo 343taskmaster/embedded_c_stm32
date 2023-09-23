@@ -1,25 +1,17 @@
 Src/systic.o: ../Src/systic.c \
- D:/STM32\ workspace/011_Systic_delay/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
- D:/STM32\ workspace/011_Systic_delay/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h \
- D:/STM32\ workspace/011_Systic_delay/Drivers/CMSIS/Include/core_cm4.h \
- D:/STM32\ workspace/011_Systic_delay/Drivers/CMSIS/Include/cmsis_version.h \
- D:/STM32\ workspace/011_Systic_delay/Drivers/CMSIS/Include/cmsis_compiler.h \
- D:/STM32\ workspace/011_Systic_delay/Drivers/CMSIS/Include/cmsis_gcc.h \
- D:/STM32\ workspace/011_Systic_delay/Drivers/CMSIS/Include/mpu_armv7.h \
- D:/STM32\ workspace/011_Systic_delay/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
-
-D:/STM32\ workspace/011_Systic_delay/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
-
-D:/STM32\ workspace/011_Systic_delay/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h:
-
-D:/STM32\ workspace/011_Systic_delay/Drivers/CMSIS/Include/core_cm4.h:
-
-D:/STM32\ workspace/011_Systic_delay/Drivers/CMSIS/Include/cmsis_version.h:
-
-D:/STM32\ workspace/011_Systic_delay/Drivers/CMSIS/Include/cmsis_compiler.h:
-
-D:/STM32\ workspace/011_Systic_delay/Drivers/CMSIS/Include/cmsis_gcc.h:
-
-D:/STM32\ workspace/011_Systic_delay/Drivers/CMSIS/Include/mpu_armv7.h:
-
-D:/STM32\ workspace/011_Systic_delay/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h:
+ /Users/arnoldbenedictganapin/Documents/embedded_c_stm32/chip_header/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
+ /Users/arnoldbenedictganapin/Documents/embedded_c_stm32/chip_header/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h \
+ /Users/arnoldbenedictganapin/Documents/embedded_c_stm32/chip_header/CMSIS/include/core_cm4.h \
+ /Users/arnoldbenedictganapin/Documents/embedded_c_stm32/chip_header/CMSIS/include/cmsis_version.h \
+ /Users/arnoldbenedictganapin/Documents/embedded_c_stm32/chip_header/CMSIS/include/cmsis_compiler.h \
+ /Users/arnoldbenedictganapin/Documents/embedded_c_stm32/chip_header/CMSIS/include/cmsis_gcc.h \
+ /Users/arnoldbenedictganapin/Documents/embedded_c_stm32/chip_header/CMSIS/include/mpu_armv7.h \
+ /Users/arnoldbenedictganapin/Documents/embedded_c_stm32/chip_header/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
+/Users/arnoldbenedictganapin/Documents/embedded_c_stm32/chip_header/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
+/Users/arnoldbenedictganapin/Documents/embedded_c_stm32/chip_header/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h:
+/Users/arnoldbenedictganapin/Documents/embedded_c_stm32/chip_header/CMSIS/include/core_cm4.h:
+/Users/arnoldbenedictganapin/Documents/embedded_c_stm32/chip_header/CMSIS/include/cmsis_version.h:
+/Users/arnoldbenedictganapin/Documents/embedded_c_stm32/chip_header/CMSIS/include/cmsis_compiler.h:
+/Users/arnoldbenedictganapin/Documents/embedded_c_stm32/chip_header/CMSIS/include/cmsis_gcc.h:
+/Users/arnoldbenedictganapin/Documents/embedded_c_stm32/chip_header/CMSIS/include/mpu_armv7.h:
+/Users/arnoldbenedictganapin/Documents/embedded_c_stm32/chip_header/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h:

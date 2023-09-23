@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (9-2020-q2-update)
+# Toolchain: GNU Tools for STM32 (11.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -42,14 +42,14 @@ BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ART
 EXECUTABLES += \
 8_uart_rx_my.elf \
 
+MAP_FILES += \
+8_uart_rx_my.map \
+
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
 8_uart_rx_my.list \
-
-OBJCOPY_BIN += \
-8_uart_rx_my.bin \
 
 
 # All Target
@@ -59,8 +59,8 @@ all: main-build
 main-build: 8_uart_rx_my.elf secondary-outputs
 
 # Tool invocations
-8_uart_rx_my.elf: $(OBJS) $(USER_OBJS) D:\STM32\ workspace\8_uart_rx_my\STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "8_uart_rx_my.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\STM32 workspace\8_uart_rx_my\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8_uart_rx_my.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+8_uart_rx_my.elf 8_uart_rx_my.map: $(OBJS) $(USER_OBJS) /Users/arnoldbenedictganapin/Documents/embedded_c_stm32/8_uart_rx_my/STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "8_uart_rx_my.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/arnoldbenedictganapin/Documents/embedded_c_stm32/8_uart_rx_my/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8_uart_rx_my.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -74,17 +74,12 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-8_uart_rx_my.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "8_uart_rx_my.bin"
-	@echo 'Finished building: $@'
-	@echo ' '
-
 # Other Targets
 clean:
-	-$(RM) 8_uart_rx_my.bin 8_uart_rx_my.elf 8_uart_rx_my.list default.size.stdout
+	-$(RM) 8_uart_rx_my.elf 8_uart_rx_my.list 8_uart_rx_my.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

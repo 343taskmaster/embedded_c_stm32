@@ -29,16 +29,16 @@ void systicDelayMs(int delay)
 
 	for(int i=0; i<delay ; i++){
 		/*wait until the counter flag is set  */
+		while((SysTick->CTRL & CTRL_COUNTFLAG) == 0 ){}
+			/*if
+			 * SysTick->CTRL & CTRL_COUNTFLAG are both 0 then do nothing
+			 * if (SysTick->CTRL & CTRL_COUNTFLAG are both 1 then proceed to the outside of the loop
+			 *
+			 * */
 
 	}
 
-	while((SysTick->CTRL & CTRL_COUNTFLAG) == 0 ){
-		/*if
-		 * SysTick->CTRL & CTRL_COUNTFLAG are both 0 then do nothing
-		 * if (SysTick->CTRL & CTRL_COUNTFLAG are both 1 then proceed to the outside of the loop
-		 *
-		 * */
-	}
+
 
 	SysTick->CTRL = 0; /*This will turn off the following bits */
 

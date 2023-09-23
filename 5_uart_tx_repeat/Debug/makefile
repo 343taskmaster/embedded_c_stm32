@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (9-2020-q2-update)
+# Toolchain: GNU Tools for STM32 (11.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -33,34 +33,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := 4_gpio_input
+BUILD_ARTIFACT_NAME := 5_uart_tx_repeat
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-4_gpio_input.elf \
+5_uart_tx_repeat.elf \
+
+MAP_FILES += \
+5_uart_tx_repeat.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-4_gpio_input.list \
-
-OBJCOPY_BIN += \
-4_gpio_input.bin \
+5_uart_tx_repeat.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: 4_gpio_input.elf secondary-outputs
+main-build: 5_uart_tx_repeat.elf secondary-outputs
 
 # Tool invocations
-4_gpio_input.elf: $(OBJS) $(USER_OBJS) D:\STM32\ workspace\4_gpio_input\STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "4_gpio_input.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\STM32 workspace\4_gpio_input\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+5_uart_tx_repeat.elf 5_uart_tx_repeat.map: $(OBJS) $(USER_OBJS) /Users/arnoldbenedictganapin/Documents/embedded_c_stm32/5_uart_tx_repeat/STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "5_uart_tx_repeat.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/arnoldbenedictganapin/Documents/embedded_c_stm32/5_uart_tx_repeat/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="5_uart_tx_repeat.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -69,22 +69,17 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-4_gpio_input.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "4_gpio_input.list"
-	@echo 'Finished building: $@'
-	@echo ' '
-
-4_gpio_input.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "4_gpio_input.bin"
+5_uart_tx_repeat.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "5_uart_tx_repeat.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) 4_gpio_input.bin 4_gpio_input.elf 4_gpio_input.list default.size.stdout
+	-$(RM) 5_uart_tx_repeat.elf 5_uart_tx_repeat.list 5_uart_tx_repeat.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

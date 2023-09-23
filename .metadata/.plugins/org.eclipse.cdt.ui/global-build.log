@@ -1,92 +1,21 @@
-01:18:16 **** Incremental Build of configuration Debug for project 011_Systic_delay ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DDEBUG -DSTM32F411xE -c -I../Inc -I"D:/STM32 workspace/011_Systic_delay/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/STM32 workspace/011_Systic_delay/Drivers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "011_Systic_delay.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32 workspace\011_Systic_delay\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="011_Systic_delay.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+22:34:35 **** Incremental Build of configuration Release for project 011_Systic_delay ****
+make -j7 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DDebug -DSTM32F411xE -c -I../Inc -I/Users/arnoldbenedictganapin/Documents/embedded_c_stm32/chip_header/CMSIS/Device/ST/STM32F4xx/Include -I/Users/arnoldbenedictganapin/Documents/embedded_c_stm32/chip_header/CMSIS/include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "011_Systic_delay.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/arnoldbenedictganapin/Documents/embedded_c_stm32/011_Systic_delay/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="011_Systic_delay.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: 011_Systic_delay.elf
  
 arm-none-eabi-size   011_Systic_delay.elf 
 arm-none-eabi-objdump -h -S  011_Systic_delay.elf  > "011_Systic_delay.list"
-arm-none-eabi-objcopy  -O binary  011_Systic_delay.elf  "011_Systic_delay.bin"
    text	   data	    bss	    dec	    hex	filename
-   5572	    108	   1596	   7276	   1c6c	011_Systic_delay.elf
-Finished building: default.size.stdout
- 
-Finished building: 011_Systic_delay.bin
-Finished building: 011_Systic_delay.list
- 
- 
-01:18:29 **** Incremental Build of configuration Debug for project 011_Systic_delay ****
-make -j8 all 
-arm-none-eabi-size   011_Systic_delay.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5572	    108	   1596	   7276	   1c6c	011_Systic_delay.elf
-Finished building: default.size.stdout
- 
-01:20:18 **** Incremental Build of configuration Debug for project 011_Systic_delay ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DDEBUG -DSTM32F411xE -c -I../Inc -I"D:/STM32 workspace/011_Systic_delay/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/STM32 workspace/011_Systic_delay/Drivers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "011_Systic_delay.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32 workspace\011_Systic_delay\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="011_Systic_delay.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 011_Systic_delay.elf
- 
-arm-none-eabi-size   011_Systic_delay.elf 
-arm-none-eabi-objdump -h -S  011_Systic_delay.elf  > "011_Systic_delay.list"
-arm-none-eabi-objcopy  -O binary  011_Systic_delay.elf  "011_Systic_delay.bin"
-   text	   data	    bss	    dec	    hex	filename
-   5588	    108	   1596	   7292	   1c7c	011_Systic_delay.elf
-Finished building: default.size.stdout
- 
-Finished building: 011_Systic_delay.bin
-Finished building: 011_Systic_delay.list
- 
- 
-01:20:48 **** Incremental Build of configuration Debug for project 011_Systic_delay ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DDEBUG -DSTM32F411xE -c -I../Inc -I"D:/STM32 workspace/011_Systic_delay/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/STM32 workspace/011_Systic_delay/Drivers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "011_Systic_delay.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32 workspace\011_Systic_delay\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="011_Systic_delay.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 011_Systic_delay.elf
- 
-arm-none-eabi-size   011_Systic_delay.elf 
-arm-none-eabi-objdump -h -S  011_Systic_delay.elf  > "011_Systic_delay.list"
-arm-none-eabi-objcopy  -O binary  011_Systic_delay.elf  "011_Systic_delay.bin"
-   text	   data	    bss	    dec	    hex	filename
-   5732	    108	   1596	   7436	   1d0c	011_Systic_delay.elf
-Finished building: default.size.stdout
- 
-Finished building: 011_Systic_delay.bin
-Finished building: 011_Systic_delay.list
- 
- 
-01:21:37 **** Incremental Build of configuration Debug for project 011_Systic_delay ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DDEBUG -DSTM32F411xE -c -I../Inc -I"D:/STM32 workspace/011_Systic_delay/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/STM32 workspace/011_Systic_delay/Drivers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "011_Systic_delay.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32 workspace\011_Systic_delay\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="011_Systic_delay.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 011_Systic_delay.elf
- 
-arm-none-eabi-size   011_Systic_delay.elf 
-arm-none-eabi-objdump -h -S  011_Systic_delay.elf  > "011_Systic_delay.list"
-arm-none-eabi-objcopy  -O binary  011_Systic_delay.elf  "011_Systic_delay.bin"
-   text	   data	    bss	    dec	    hex	filename
-   5584	    108	   1596	   7288	   1c78	011_Systic_delay.elf
+   4876	    100	   1900	   6876	   1adc	011_Systic_delay.elf
 Finished building: default.size.stdout
  
 Finished building: 011_Systic_delay.list
  
-Finished building: 011_Systic_delay.bin
- 
-01:22:04 **** Incremental Build of configuration Debug for project 011_Systic_delay ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DDEBUG -DSTM32F411xE -c -I../Inc -I"D:/STM32 workspace/011_Systic_delay/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/STM32 workspace/011_Systic_delay/Drivers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "011_Systic_delay.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32 workspace\011_Systic_delay\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="011_Systic_delay.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 011_Systic_delay.elf
- 
+22:34:57 **** Incremental Build of configuration Release for project 011_Systic_delay ****
+make -j7 all 
 arm-none-eabi-size   011_Systic_delay.elf 
-arm-none-eabi-objdump -h -S  011_Systic_delay.elf  > "011_Systic_delay.list"
-arm-none-eabi-objcopy  -O binary  011_Systic_delay.elf  "011_Systic_delay.bin"
    text	   data	    bss	    dec	    hex	filename
-   5584	    108	   1596	   7288	   1c78	011_Systic_delay.elf
+   4876	    100	   1900	   6876	   1adc	011_Systic_delay.elf
 Finished building: default.size.stdout
- 
-Finished building: 011_Systic_delay.bin
- 
-Finished building: 011_Systic_delay.list
  

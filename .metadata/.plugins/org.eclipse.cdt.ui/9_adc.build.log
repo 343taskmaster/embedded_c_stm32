@@ -1,20 +1,26 @@
-01:00:11 **** Incremental Build of configuration Debug for project 9_adc ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DDEBUG -DSTM32F411xE -c -I../Inc -I"D:/STM32 workspace/9_adc/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/STM32 workspace/9_adc/Drivers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/adc.d" -MT"Src/adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/adc.o"
-arm-none-eabi-gcc -o "9_adc.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32 workspace\9_adc\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="9_adc.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 9_adc.elf
- 
-arm-none-eabi-size   9_adc.elf 
-arm-none-eabi-objdump -h -S  9_adc.elf  > "9_adc.list"
-arm-none-eabi-objcopy  -O binary  9_adc.elf  "9_adc.bin"
-   text	   data	    bss	    dec	    hex	filename
-   5608	    108	   1596	   7312	   1c90	9_adc.elf
-Finished building: default.size.stdout
- 
-Finished building: 9_adc.bin
- 
-Finished building: 9_adc.list
- 
+22:55:24 **** Build of configuration Release for project 9_adc ****
+make -j7 all 
+arm-none-eabi-gcc "../Src/adc.c" -mcpu=cortex-m4 -std=gnu11 -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/adc.d" -MT"Src/adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/adc.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m4 -std=gnu11 -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/uart.o"
+../Src/adc.c:7:10: fatal error: stm32f4xx.h: No such file or directory
+    7 | #include "stm32f4xx.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:31: Src/adc.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Src/uart.c:1:
+../Inc/uart.h:7:10: fatal error: stm32f4xx.h: No such file or directory
+    7 | #include "stm32f4xx.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:31: Src/uart.o] Error 1
+../Src/main.c:5:10: fatal error: stm32f4xx.h: No such file or directory
+    5 | #include "stm32f4xx.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:31: Src/main.o] Error 1
+"make -j7 all" terminated with exit code 2. Build might be incomplete.
 
-01:00:12 Build Finished. 0 errors, 0 warnings. (took 610ms)
+22:55:24 Build Failed. 7 errors, 0 warnings. (took 288ms)
 

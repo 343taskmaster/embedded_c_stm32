@@ -7,6 +7,7 @@
 #include "adc.h"
 #include "systic.h"
 
+
 #define GPIOAEN 		(1U<<0)
 #define PIN5			(1U<<5)
 #define LED			PIN5
@@ -33,7 +34,9 @@ int main(void)
 
 		printf("1 milli second passed !! \n\r");
 		GPIOA->ODR ^=LED;
-		systicDelayMs(1000);
+		systicDelayMs(5000);
+		GPIOA->ODR =OFFLED;
+		systicDelayMs(5000);
 
 		/*There is 1000 mili second in 1 second */
 		/*There for 2000 mili second is 2 second */
