@@ -4229,3 +4229,6 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/arnol
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-09-23 22:17:23.440
 !MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-09-23 23:00:51.627
+!MESSAGE Indexed '012_timers' (6 sources, 67 headers) in 3.2 sec: 3,244 declarations; 5,523 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.023%)
